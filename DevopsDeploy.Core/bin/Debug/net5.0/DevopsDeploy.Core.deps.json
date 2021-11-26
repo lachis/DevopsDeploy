@@ -1,0 +1,50 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v5.0",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v5.0": {
+      "DevopsDeploy.Core/1.0.0": {
+        "dependencies": {
+          "DevopsDeploy": "1.0.0",
+          "DevopsDeploy.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DevopsDeploy.Core.dll": {}
+        }
+      },
+      "DevopsDeploy/1.0.0": {
+        "dependencies": {
+          "DevopsDeploy.Domain": "1.0.0"
+        },
+        "runtime": {
+          "DevopsDeploy.dll": {}
+        }
+      },
+      "DevopsDeploy.Domain/1.0.0": {
+        "runtime": {
+          "DevopsDeploy.Domain.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "DevopsDeploy.Core/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevopsDeploy/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "DevopsDeploy.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

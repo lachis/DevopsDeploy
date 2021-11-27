@@ -1,8 +1,0 @@
-﻿[
-  {
-    "Id": "Deployment-1",
-    "ReleaseId": "Release-1",
-    "EnvironmentId": "Environment-1",
-    "DeployedAt": "2000-01-01T10:00:00"
-  }
-]

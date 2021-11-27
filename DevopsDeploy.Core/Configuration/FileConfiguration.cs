@@ -1,4 +1,6 @@
-﻿namespace DevopsDeploy.Configuration
+﻿using DevopsDeploy.Abstractions.Interfaces;
+
+namespace DevopsDeploy.Core.Configuration
 {
     public class FileConfiguration : ILocationConfiguration
     {
@@ -8,10 +10,5 @@
         {
             Location = location;
         }
-    }
-
-    public interface ILocationConfiguration
-    {
-        public string Location { get;  }
     }
 }

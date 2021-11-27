@@ -1,4 +1,4 @@
-﻿using DevopsDeploy.Configuration;
+﻿using DevopsDeploy.Core.Configuration;
 
 namespace DevopsDeploy.Tests.Configuration
 {

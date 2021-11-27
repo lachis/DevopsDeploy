@@ -3,9 +3,9 @@ using System.IO;
 using System.Linq;
 using System.Text.Json;
 using System.Threading.Tasks;
-using DevopsDeploy.Configuration;
-using DevopsDeploy.Domain;
-using DevopsDeploy.Strategies;
+using DevopsDeploy.Core.Configuration;
+using DevopsDeploy.Core.DataAccess;
+using DevopsDeploy.Domain.Models;
 using Xunit;
 
 namespace DevopsDeploy.Tests.StrategyTests
@@ -37,7 +37,7 @@ namespace DevopsDeploy.Tests.StrategyTests
         [Fact]
         public async Task SystemPathStrategy_ReadFile_NotEmpty()
         {
-            SystemPathStrategy strategy = new(new FileConfiguration("Assets"));
+            LocalDiskArtifactRepository strategy = new(new FileConfiguration("Assets"));
             var projects = await strategy.Get<Project>("Projects.json");
             
             Assert.NotEmpty(projects);

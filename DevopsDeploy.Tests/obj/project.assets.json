@@ -1671,24 +1671,24 @@
           "build/netcoreapp2.1/xunit.runner.visualstudio.props": {}
         }
       },
-      "DevopsDeploy/1.0.0": {
+      "DevopsDeploy.Abstractions/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
           "DevopsDeploy.Domain": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/DevopsDeploy.dll": {}
+          "bin/placeholder/DevopsDeploy.Abstractions.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DevopsDeploy.dll": {}
+          "bin/placeholder/DevopsDeploy.Abstractions.dll": {}
         }
       },
       "DevopsDeploy.Core/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v5.0",
         "dependencies": {
-          "DevopsDeploy": "1.0.0",
+          "DevopsDeploy.Abstractions": "1.0.0",
           "DevopsDeploy.Domain": "1.0.0"
         },
         "compile": {
@@ -5944,10 +5944,10 @@
         "xunit.runner.visualstudio.nuspec"
       ]
     },
-    "DevopsDeploy/1.0.0": {
+    "DevopsDeploy.Abstractions/1.0.0": {
       "type": "project",
-      "path": "../DevopsDeploy/DevopsDeploy.csproj",
-      "msbuildProject": "../DevopsDeploy/DevopsDeploy.csproj"
+      "path": "../DevopsDeploy.Abstractions/DevopsDeploy.Abstractions.csproj",
+      "msbuildProject": "../DevopsDeploy.Abstractions/DevopsDeploy.Abstractions.csproj"
     },
     "DevopsDeploy.Core/1.0.0": {
       "type": "project",
@@ -5962,7 +5962,6 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "DevopsDeploy >= 1.0.0",
       "DevopsDeploy.Core >= 1.0.0",
       "DevopsDeploy.Domain >= 1.0.0",
       "Microsoft.NET.Test.Sdk >= 16.9.4",
@@ -6001,9 +6000,6 @@
             },
             "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj": {
               "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj"
-            },
-            "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj": {
-              "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj"
             }
           }
         }

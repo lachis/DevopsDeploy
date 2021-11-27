@@ -6,5 +6,6 @@
     &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.ReleaseDeploymentLogicTests.Basic&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.ReleaseDeploymentLogicTests&lt;/TestId&gt;&#xD;
     &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.BusinessLogicValidationTests.UseCase2Projects1EnvironmentKeep2ReleasesTests&lt;/TestId&gt;&#xD;
+    &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.ReleaseRetentionPolicyTests.ReleaseRetentionPolicyTests&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

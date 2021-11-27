@@ -22,11 +22,6 @@
     <ItemGroup>
       <ProjectReference Include="..\DevopsDeploy.Core\DevopsDeploy.Core.csproj" />
       <ProjectReference Include="..\DevopsDeploy.Domain\DevopsDeploy.Domain.csproj" />
-      <ProjectReference Include="..\DevopsDeploy\DevopsDeploy.csproj" />
-    </ItemGroup>
-
-    <ItemGroup>
-      <Folder Include="Assets" />
     </ItemGroup>
 
 </Project>

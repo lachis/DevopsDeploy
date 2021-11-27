@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v5.0": {
       "DevopsDeploy.Core/1.0.0": {
         "dependencies": {
-          "DevopsDeploy": "1.0.0",
+          "DevopsDeploy.Abstractions": "1.0.0",
           "DevopsDeploy.Domain": "1.0.0"
         },
         "runtime": {
           "DevopsDeploy.Core.dll": {}
         }
       },
-      "DevopsDeploy/1.0.0": {
+      "DevopsDeploy.Abstractions/1.0.0": {
         "dependencies": {
           "DevopsDeploy.Domain": "1.0.0"
         },
         "runtime": {
-          "DevopsDeploy.dll": {}
+          "DevopsDeploy.Abstractions.dll": {}
         }
       },
       "DevopsDeploy.Domain/1.0.0": {
@@ -36,7 +36,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "DevopsDeploy/1.0.0": {
+    "DevopsDeploy.Abstractions/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""

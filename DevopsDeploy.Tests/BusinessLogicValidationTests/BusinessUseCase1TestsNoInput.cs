@@ -1,8 +1,8 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using DevopsDeploy.Domain;
-using DevopsDeploy.Strategies;
+using DevopsDeploy.Core.DataAccess;
+using DevopsDeploy.Domain.Models;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
 
@@ -32,7 +32,7 @@ namespace DevopsDeploy.Tests.BusinessLogic
 
         public async Task InitializeAsync()
         {
-            SystemPathStrategy strategy = new(new TestFileConfiguration());
+            LocalDiskArtifactRepository strategy = new(new TestFileConfiguration());
             var releases = await strategy.Get<Release>("TestReleases-1.json");
             var deployments = await strategy.Get<Deployment>("TestDeployments-1.json");
 

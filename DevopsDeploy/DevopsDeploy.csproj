@@ -45,7 +45,16 @@
     </ItemGroup>
 
     <ItemGroup>
+      <ProjectReference Include="..\DevopsDeploy.Abstractions\DevopsDeploy.Abstractions.csproj" />
+      <ProjectReference Include="..\DevopsDeploy.Core\DevopsDeploy.Core.csproj" />
       <ProjectReference Include="..\DevopsDeploy.Domain\DevopsDeploy.Domain.csproj" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <PackageReference Include="Autofac" Version="6.3.0" />
+      <PackageReference Include="Autofac.Extensions.DependencyInjection" Version="7.2.0" />
+      <PackageReference Include="Microsoft.Extensions.DependencyInjection" Version="6.0.0" />
+      <PackageReference Include="Microsoft.Extensions.Logging" Version="6.0.0" />
     </ItemGroup>
 
 </Project>

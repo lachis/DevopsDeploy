@@ -119,3 +119,15 @@ C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\As
 C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Assets\TestProjects-2.json
 C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\DevopsDeploy.Core.dll
 C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\DevopsDeploy.Core.pdb
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Autofac.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Autofac.Extensions.DependencyInjection.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Microsoft.Extensions.Logging.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Microsoft.Extensions.Logging.Abstractions.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Microsoft.Extensions.Options.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\Microsoft.Extensions.Primitives.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\System.Diagnostics.DiagnosticSource.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\System.Runtime.CompilerServices.Unsafe.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\DevopsDeploy.Abstractions.dll
+C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests\bin\Debug\net5.0\DevopsDeploy.Abstractions.pdb

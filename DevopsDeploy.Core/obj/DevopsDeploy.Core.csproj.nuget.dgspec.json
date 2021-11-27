@@ -4,6 +4,62 @@
     "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Core\\DevopsDeploy.Core.csproj": {}
   },
   "projects": {
+    "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Abstractions\\DevopsDeploy.Abstractions.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Abstractions\\DevopsDeploy.Abstractions.csproj",
+        "projectName": "DevopsDeploy.Abstractions",
+        "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Abstractions\\DevopsDeploy.Abstractions.csproj",
+        "packagesPath": "C:\\Users\\lachl\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Abstractions\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\lachl\\AppData\\Roaming\\NuGet\\NuGet.Config"
+        ],
+        "originalTargetFrameworks": [
+          "net5.0"
+        ],
+        "sources": {
+          "https://api.nuget.org/v3/index.json": {}
+        },
+        "frameworks": {
+          "net5.0": {
+            "targetAlias": "net5.0",
+            "projectReferences": {
+              "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj": {
+                "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj"
+              }
+            }
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
+        }
+      }
+    },
     "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Core\\DevopsDeploy.Core.csproj": {
       "version": "1.0.0",
       "restore": {
@@ -26,11 +82,11 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {
+              "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Abstractions\\DevopsDeploy.Abstractions.csproj": {
+                "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Abstractions\\DevopsDeploy.Abstractions.csproj"
+              },
               "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj": {
                 "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj"
-              },
-              "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj": {
-                "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj"
               }
             }
           }
@@ -85,62 +141,6 @@
           "net5.0": {
             "targetAlias": "net5.0",
             "projectReferences": {}
-          }
-        },
-        "warningProperties": {
-          "warnAsError": [
-            "NU1605"
-          ]
-        }
-      },
-      "frameworks": {
-        "net5.0": {
-          "targetAlias": "net5.0",
-          "imports": [
-            "net461",
-            "net462",
-            "net47",
-            "net471",
-            "net472",
-            "net48"
-          ],
-          "assetTargetFallback": true,
-          "warn": true,
-          "frameworkReferences": {
-            "Microsoft.NETCore.App": {
-              "privateAssets": "all"
-            }
-          },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.400\\RuntimeIdentifierGraph.json"
-        }
-      }
-    },
-    "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj": {
-      "version": "1.0.0",
-      "restore": {
-        "projectUniqueName": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj",
-        "projectName": "DevopsDeploy",
-        "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\DevopsDeploy.csproj",
-        "packagesPath": "C:\\Users\\lachl\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy\\obj\\",
-        "projectStyle": "PackageReference",
-        "configFilePaths": [
-          "C:\\Users\\lachl\\AppData\\Roaming\\NuGet\\NuGet.Config"
-        ],
-        "originalTargetFrameworks": [
-          "net5.0"
-        ],
-        "sources": {
-          "https://api.nuget.org/v3/index.json": {}
-        },
-        "frameworks": {
-          "net5.0": {
-            "targetAlias": "net5.0",
-            "projectReferences": {
-              "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj": {
-                "projectPath": "C:\\Users\\lachl\\RiderProjects\\DevopsDeploy\\DevopsDeploy.Domain\\DevopsDeploy.Domain.csproj"
-              }
-            }
           }
         },
         "warningProperties": {

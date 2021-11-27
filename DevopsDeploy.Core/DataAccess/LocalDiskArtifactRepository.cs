@@ -2,16 +2,15 @@
 using System.IO;
 using System.Text.Json;
 using System.Threading.Tasks;
-using DevopsDeploy.Configuration;
-using DevopsDeploy.Domain;
+using DevopsDeploy.Abstractions.Interfaces;
 
-namespace DevopsDeploy.Strategies
+namespace DevopsDeploy.Core.DataAccess
 {
-    public class SystemPathStrategy : IAccessStrategy
+    public class LocalDiskArtifactRepository : IRepository
     {
         private readonly ILocationConfiguration _locationConfiguration;
 
-        public SystemPathStrategy(ILocationConfiguration locationConfiguration)
+        public LocalDiskArtifactRepository(ILocationConfiguration locationConfiguration)
         {
             _locationConfiguration = locationConfiguration;
         }
@@ -21,16 +20,11 @@ namespace DevopsDeploy.Strategies
         /// </summary>
         /// <param name="path">The file path</param>
         /// <typeparam name="T">The Serialized Output type from the json string</typeparam>
-        /// <returns></returns>
+        /// <returns>A collection of T</returns>
         public async Task<IEnumerable<T>> Get<T>(string path) where T : class
         {
             await using FileStream openStream = File.OpenRead($"{_locationConfiguration.Location}/{path}");
             return await JsonSerializer.DeserializeAsync<IEnumerable<T>>(openStream);
         }
-    }
-
-    public interface IAccessStrategy
-    {
-        Task<IEnumerable<T>> Get<T>(string path) where T : class;
     }
 }

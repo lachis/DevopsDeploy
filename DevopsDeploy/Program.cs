@@ -1,8 +1,12 @@
-﻿using System.Linq;
-using System.Threading.Tasks;
-using DevopsDeploy.Configuration;
-using DevopsDeploy.Domain;
-using DevopsDeploy.Strategies;
+﻿using System.Threading.Tasks;
+using Autofac;
+using Autofac.Extensions.DependencyInjection;
+using DevopsDeploy.Abstractions.Interfaces;
+using DevopsDeploy.Core.Configuration;
+using DevopsDeploy.Core.DataAccess;
+using DevopsDeploy.Core.Retention;
+using DevopsDeploy.Core.RetentionPolicies;
+using Microsoft.Extensions.DependencyInjection;
 
 namespace DevopsDeploy
 {
@@ -10,22 +14,33 @@ namespace DevopsDeploy
     {
         static async Task Main(string[] args)
         {
-            // autofac
-            // main flow is a loop or a scheduled task
-            // while the task asks to read from disk an extension would be to make this a strategy
+            ServiceCollection serviceCollection = new();
+            serviceCollection.AddLogging();
+            ContainerBuilder containerBuilder = new();
+            containerBuilder.Populate(serviceCollection);
+            containerBuilder.Register(_ => new FileConfiguration("Assets"))
+                .As<ILocationConfiguration>();
             
-            /*
-             * For each project/environment combination, keep n releases that have most recently been deployed, 
-            where n is the number of releases to keep.
-            note: A release is considered to have "been deployed" if the release has one or more deployments
-             */
+            containerBuilder.RegisterType<LocalDiskArtifactRepository>()
+                .As<IRepository>();
+
+            containerBuilder.RegisterType<RetainedReleases>();
+            containerBuilder.RegisterType<StandardReleaseRetentionPolicy>()
+                .As<IReleaseRetentionPolicy>();
             
-            SystemPathStrategy strategy = new(new FileConfiguration("Assets"));
-            var projects = await strategy.Get<Project>("Releases.json");
-            var environments = await strategy.Get<Environment>("Deployments.json");
+            containerBuilder.Register(ctx => 
+                    new LocalDiskArtifactIdentification(ctx.Resolve<IRepository>(), "Releases.json", "Deployments.json"))
+                .As<IArtifactIdentification>();
 
-            // projects.Join(environments, p => p.Id, e => e.Id)
+            containerBuilder.RegisterDecorator<RetentionPolicyDecorator, IReleaseRetentionPolicy>();
 
+            containerBuilder.RegisterType<ReleaseRetention>();
+            var container = containerBuilder.Build();
+
+            await using ILifetimeScope lifetimeScope = container.BeginLifetimeScope();
+
+            var releaseRetention = lifetimeScope.Resolve<ReleaseRetention>();
+            var retain = await releaseRetention.Retain(2);
             
         }
     }

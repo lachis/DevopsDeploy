@@ -22,7 +22,7 @@ namespace DevopsDeploy.Core.RetentionPolicies
                 result.TryAdd(key, finalReleases);
             }
 
-           return result.SelectMany(x => x.Value)
+            return result.SelectMany(x => x.Value)
                 .ToList();
         }
     }

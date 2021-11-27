@@ -30,8 +30,6 @@ namespace DevopsDeploy.Core.DataAccess
                 group (r, d) by (r.ProjectId, d.EnvironmentId)
                 into grouping
                 select new ReleaseIdentification(grouping.Key, grouping.ToList());
-
-            // return new StandardReleaseRetentionPolicy(identifiedReleases, numReleases);
         }
     }
 }

@@ -32,7 +32,7 @@ namespace DevopsDeploy
                     new LocalDiskArtifactIdentification(ctx.Resolve<IRepository>(), "Releases.json", "Deployments.json"))
                 .As<IArtifactIdentification>();
 
-            containerBuilder.RegisterDecorator<RetentionPolicyDecorator, IReleaseRetentionPolicy>();
+            containerBuilder.RegisterDecorator<RetentionLoggingDecorator, IReleaseRetentionPolicy>();
 
             containerBuilder.RegisterType<ReleaseRetention>();
             var container = containerBuilder.Build();

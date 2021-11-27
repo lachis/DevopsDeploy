@@ -4,11 +4,11 @@ using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Core.RetentionPolicies
 {
-    public class RetentionPolicyDecorator : IReleaseRetentionPolicy
+    public class RetentionLoggingDecorator : IReleaseRetentionPolicy
     {
         private readonly IReleaseRetentionPolicy _decoratee;
 
-        public RetentionPolicyDecorator(IReleaseRetentionPolicy decoratee )
+        public RetentionLoggingDecorator(IReleaseRetentionPolicy decoratee )
         {
             _decoratee = decoratee;
         }

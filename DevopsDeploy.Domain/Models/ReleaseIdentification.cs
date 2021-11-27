@@ -10,8 +10,6 @@ namespace DevopsDeploy.Domain.Models
             Grouping = grouping; 
         }
 
-        public IEnumerable<Release> Releases { get; }
-
         public (string ProjectId, string EnvironmentId) Key { get; }
         public List<(Release r, Deployment d)> Grouping { get; }
     }

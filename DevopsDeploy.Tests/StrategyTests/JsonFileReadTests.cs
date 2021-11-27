@@ -15,7 +15,7 @@ namespace DevopsDeploy.Tests.StrategyTests
         [Fact]
         public async Task Basic_ReadProjects_Success()
         {
-            string fileName = "Assets/Projects.json";
+            string fileName = "Assets/TestProjects-2.json";
             using FileStream openStream = File.OpenRead(fileName);
             var projects = 
                 await JsonSerializer.DeserializeAsync<IEnumerable<Project>>(openStream);
@@ -26,7 +26,7 @@ namespace DevopsDeploy.Tests.StrategyTests
         [Fact]
         public async Task Basic_ReadProjects_CountIsCorrect()
         {
-            string fileName = "Assets/Projects.json";
+            string fileName = "Assets/TestProjects-2.json";
             using FileStream openStream = File.OpenRead(fileName);
             var projects = 
                 await JsonSerializer.DeserializeAsync<IEnumerable<Project>>(openStream);
@@ -38,7 +38,7 @@ namespace DevopsDeploy.Tests.StrategyTests
         public async Task SystemPathStrategy_ReadFile_NotEmpty()
         {
             LocalDiskArtifactRepository strategy = new(new FileConfiguration("Assets"));
-            var projects = await strategy.Get<Project>("Projects.json");
+            var projects = await strategy.Get<Project>("TestProjects-2.json");
             
             Assert.NotEmpty(projects);
         }

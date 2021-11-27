@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DevopsDeploy.Core.DataAccess;
+using DevopsDeploy.Core.RetentionPolicies;
 using DevopsDeploy.Domain.Models;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
@@ -28,11 +29,11 @@ namespace DevopsDeploy.Tests.ReleaseRetentionPolicyTests
                 into grouping
                 select new ReleaseIdentification(grouping.Key, grouping.ToList());
 
-            // StandardReleaseRetentionPolicy standardReleaseRetentionPolicy = new (identifiedReleases, 2);
-            // standardReleaseRetentionPolicy.ApplyPolicy();
-            // _result = standardReleaseRetentionPolicy.Result();
-            //
-            // _releaseIds = _result.Select(x=>x.Id).ToList();
+            var input = identifiedReleases
+                .ToDictionary(x => x.Key, x => x.Grouping.ToList());
+            StandardReleaseRetentionPolicy policy = new();
+            _result = policy.ApplyPolicy(input, 2);
+             _releaseIds = _result.Select(x=>x.Id).ToList();
 
         }
 

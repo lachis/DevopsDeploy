@@ -1,11 +1,5 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
 	<s:String x:Key="/Default/CodeInspection/ExcludedFiles/FilesAndFoldersToSkip2/=72FB4B5E_002D8153_002D472A_002D8F0C_002DC200AC968B90_002Ff_003AProjectEnvironmentBasicTests_002Ecs/@EntryIndexedValue">ForceIncluded</s:String>
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d341efa6_002Db4d9_002D45a8_002Db661_002D19215297ffe8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReadProjects_Success" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.StrategyTests.JsonFileReadTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.ReleaseDeploymentLogicTests.Basic&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.ReleaseDeploymentLogicTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.BusinessLogicValidationTests.UseCase2Projects1EnvironmentKeep2ReleasesTests&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::72FB4B5E-8153-472A-8F0C-C200AC968B90::net5.0::DevopsDeploy.Tests.ReleaseRetentionPolicyTests.ReleaseRetentionPolicyTests&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
+  &lt;Project Location="C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests" Presentation="&amp;lt;DevopsDeploy.Tests&amp;gt;" /&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

@@ -1,0 +1,55 @@
+﻿[
+  {
+    "Id": "Release-1",
+    "ProjectId": "Project-1",
+    "Version": "1.0.0",
+    "Created": "2000-01-01T08:00:00"
+  },
+  {
+    "Id": "Release-2",
+    "ProjectId": "Project-1",
+    "Version": "1.0.1",
+    "Created": "2000-01-01T10:00:00"
+  },
+  {
+    "Id": "Release-3",
+    "ProjectId": "Project-2",
+    "Version": "1.0.0",
+    "Created": "2000-01-02T08:00:00"
+  },
+  {
+    "Id": "Release-4",
+    "ProjectId": "Project-2",
+    "Version": "1.0.1",
+    "Created": "2000-01-02T09:00:00"
+  },
+  {
+    "Id": "Release-5",
+    "ProjectId": "Project-3",
+    "Version": "1.0.0",
+    "Created": "2000-01-02T09:00:00"
+  }, 
+  {
+  "Id": "Release-6",
+  "ProjectId": "Project-4",
+  "Version": "2.0.0",
+  "Created": "2000-01-02T09:00:00"
+},  {
+  "Id": "Release-7",
+  "ProjectId": "Project-3",
+  "Version": "1.0.0",
+  "Created": "2000-01-03T09:00:00"
+},
+  {
+    "Id": "Release-8",
+    "ProjectId": "Project-4",
+    "Version": "2.0.0",
+    "Created": "2000-01-03T09:00:00"
+  },
+  {
+    "Id": "Release-9",
+    "ProjectId": "Project-5",
+    "Version": "1.0.0",
+    "Created": "2000-01-03T09:00:00"
+  }
+]

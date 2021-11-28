@@ -1,16 +1,17 @@
 ﻿using System.Collections.Generic;
+using DevopsDeploy.Domain.DTO;
 
 namespace DevopsDeploy.Domain.Models
 {
     public class ReleaseIdentification
     {
-        public ReleaseIdentification((string ProjectId, string EnvironmentId) key, List<(Release r, Deployment d)> grouping)
+        public ReleaseIdentification((string ProjectId, string EnvironmentId) key, IEnumerable<ReleaseDTO> releases)
         {
             Key = key;
-            Grouping = grouping; 
+            Releases = releases; 
         }
 
         public (string ProjectId, string EnvironmentId) Key { get; }
-        public List<(Release r, Deployment d)> Grouping { get; }
+        public IEnumerable<ReleaseDTO> Releases { get; }
     }
 }

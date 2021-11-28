@@ -1,10 +1,12 @@
 ﻿using System.Collections.Generic;
+using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Abstractions.Interfaces
 {
     public interface IReleaseRetentionPolicy
     {
-        List<Release> ApplyPolicy(Dictionary<(string, string), List<(Release r,Deployment d)>> releases, int numReleases);
+        List<ReleaseDTO> ApplyPolicy(Dictionary<(string ProjectId, string EnvironmentId), List<ReleaseDTO>> releases,
+            int numReleases);
     }
 }

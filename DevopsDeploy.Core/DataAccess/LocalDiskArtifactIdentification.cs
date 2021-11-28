@@ -2,6 +2,7 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DevopsDeploy.Abstractions.Interfaces;
+using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Core.DataAccess
@@ -28,8 +29,8 @@ namespace DevopsDeploy.Core.DataAccess
                 join d in deployments on r.Id equals d.ReleaseId
                 orderby d.DeployedAt descending 
                 group (r, d) by (r.ProjectId, d.EnvironmentId)
-                into grouping
-                select new ReleaseIdentification(grouping.Key, grouping.ToList());
+                into g
+                select new ReleaseIdentification(g.Key, g.Select(x=> new ReleaseDTO(x.r, x.d)));
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DevopsDeploy.Core.DataAccess;
 using DevopsDeploy.Core.RetentionPolicies;
+using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
@@ -11,7 +12,7 @@ namespace DevopsDeploy.Tests.ReleaseRetentionPolicyTests
 {
     public class ReleaseRetentionPolicyTests : IAsyncLifetime
     {
-        private IReadOnlyList<Release> _result;
+        private List<ReleaseDTO> _result;
         private List<string> _releaseIds;
 
         public async Task InitializeAsync()
@@ -27,13 +28,13 @@ namespace DevopsDeploy.Tests.ReleaseRetentionPolicyTests
                 orderby d.DeployedAt descending 
                 group (r, d) by (r.ProjectId, d.EnvironmentId)
                 into grouping
-                select new ReleaseIdentification(grouping.Key, grouping.ToList());
+                select new ReleaseIdentification(grouping.Key, grouping.Select(x=>new ReleaseDTO(x.r, x.d)));
 
             var input = identifiedReleases
-                .ToDictionary(x => x.Key, x => x.Grouping.ToList());
+                .ToDictionary(x => x.Key, x => x.Releases.ToList());
             StandardReleaseRetentionPolicy policy = new();
             _result = policy.ApplyPolicy(input, 2);
-             _releaseIds = _result.Select(x=>x.Id).ToList();
+             _releaseIds = _result.Select(x=>x.ReleaseId).ToList();
 
         }
 

@@ -7,6 +7,7 @@ using DevopsDeploy.Core.DataAccess;
 using DevopsDeploy.Core.Retention;
 using DevopsDeploy.Core.RetentionPolicies;
 using Microsoft.Extensions.DependencyInjection;
+using Microsoft.Extensions.Logging;
 
 namespace DevopsDeploy
 {
@@ -15,7 +16,8 @@ namespace DevopsDeploy
         static async Task Main(string[] args)
         {
             ServiceCollection serviceCollection = new();
-            serviceCollection.AddLogging();
+            
+            serviceCollection.AddLogging(ctx => ctx.AddConsole());
             ContainerBuilder containerBuilder = new();
             containerBuilder.Populate(serviceCollection);
             containerBuilder.Register(_ => new FileConfiguration("Assets"))

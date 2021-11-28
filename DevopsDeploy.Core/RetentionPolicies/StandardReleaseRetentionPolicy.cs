@@ -2,19 +2,20 @@
 using System.Linq;
 using DevopsDeploy.Abstractions.Interfaces;
 using DevopsDeploy.Core.Equality;
+using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Core.RetentionPolicies
 {
     public class StandardReleaseRetentionPolicy : IReleaseRetentionPolicy
     {
-        public List<Release> ApplyPolicy(Dictionary<(string, string), List<(Release r,Deployment d)>> releases, int numReleases)
+        public List<ReleaseDTO> ApplyPolicy(
+            Dictionary<(string ProjectId, string EnvironmentId), List<ReleaseDTO>> releases, int numReleases)
         {
-            Dictionary<(string, string), List<Release>> result = new();
+            Dictionary<(string, string), List<ReleaseDTO>> result = new();
             foreach (var (key, value) in releases)
             {
                 var finalReleases = value
-                    .Select(x => x.r)
                     .Distinct(new ReleaseComparer())
                     .Take(numReleases)
                     .ToList();

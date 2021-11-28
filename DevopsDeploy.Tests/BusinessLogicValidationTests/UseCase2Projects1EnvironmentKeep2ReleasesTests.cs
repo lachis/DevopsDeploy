@@ -3,6 +3,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using DevopsDeploy.Core.DataAccess;
 using DevopsDeploy.Core.RetentionPolicies;
+using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
@@ -11,7 +12,7 @@ namespace DevopsDeploy.Tests.BusinessLogicValidationTests
 {
     public class UseCase2Projects1EnvironmentKeep2ReleasesTests : IAsyncLifetime
     {
-        private List<Release> _objectUnderTest;
+        private List<ReleaseDTO> _objectUnderTest;
         
         [Fact]
         public void ReleaseIdentificationCount_GroupedByProjectEnvironment_CountIsCorrect()
@@ -22,7 +23,7 @@ namespace DevopsDeploy.Tests.BusinessLogicValidationTests
         [Fact]
         public void ReturnedRelease_ReleaseId_IsCorrect()
         {
-            Assert.Equal("Release-4", _objectUnderTest.First().Id);
+            Assert.Equal("Release-4", _objectUnderTest.First().ReleaseId);
         }
         
         [Fact]
@@ -40,7 +41,7 @@ namespace DevopsDeploy.Tests.BusinessLogicValidationTests
             var identifiedRleases = await strategy.Identify();
             
             var releases = identifiedRleases
-                .ToDictionary(x => x.Key, x => x.Grouping.ToList());
+                .ToDictionary(x => x.Key, x => x.Releases.ToList());
             var policy = new StandardReleaseRetentionPolicy();
             _objectUnderTest = policy.ApplyPolicy(releases, 2);
             

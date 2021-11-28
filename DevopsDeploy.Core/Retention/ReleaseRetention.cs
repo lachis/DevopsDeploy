@@ -2,7 +2,7 @@
 using System.Threading.Tasks;
 using DevopsDeploy.Abstractions.Interfaces;
 using DevopsDeploy.Core.RetentionPolicies;
-using DevopsDeploy.Domain.Models;
+using DevopsDeploy.Domain.DTO;
 
 namespace DevopsDeploy.Core.Retention
 {
@@ -17,7 +17,7 @@ namespace DevopsDeploy.Core.Retention
             _retentionPolicyFactory = retentionPolicyFactory;
         }
 
-        public async Task<IReadOnlyList<Release>> Retain(int releasesToRetain)
+        public async Task<IReadOnlyList<ReleaseDTO>> Retain(int releasesToRetain)
         {
             var identifiedReleases = await _artifactProvider.Identify();
             var retentionPolicyFactory = _retentionPolicyFactory(identifiedReleases, releasesToRetain);

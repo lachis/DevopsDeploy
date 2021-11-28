@@ -6,7 +6,7 @@ using DevopsDeploy.Domain.Models;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
 
-namespace DevopsDeploy.Tests.BusinessLogic
+namespace DevopsDeploy.Tests.BusinessLogicValidationTests
 {
     public class BusinessUseCase1TestsNoInput : IAsyncLifetime
     {
@@ -25,7 +25,7 @@ namespace DevopsDeploy.Tests.BusinessLogic
         }
         
         [Fact]
-        public async Task ReturnedDeployment_DeploymentId_IsCorrect()
+        public void ReturnedDeployment_DeploymentId_IsCorrect()
         {
             Assert.Equal("Deployment-1", _objectUnderTest.First().Item2.Id);
         }

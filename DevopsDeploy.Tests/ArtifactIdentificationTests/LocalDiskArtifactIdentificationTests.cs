@@ -59,7 +59,6 @@ namespace DevopsDeploy.Tests.ArtifactIdentificationTests
         public void ResultDoesNotContainKey(string p, string e)
         {
             Assert.DoesNotContain(_objectUnderTest, x => x.Key.EnvironmentId == e && x.Key.ProjectId == p);
-
         }
     }
 }

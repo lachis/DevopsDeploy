@@ -1,0 +1,21 @@
+ [
+  {
+    "Id": "Project-1",
+    "Name": "Random Quotes"
+  },
+  {
+    "Id": "Project-2",
+    "Name": "Pet Shop"
+  }, {
+   "Id": "Project-3",
+   "Name": "Test Project"
+ },
+   {
+     "Id": "Project-4",
+     "Name": "Fake Project"
+   },
+   {
+     "Id": "Project-5",
+     "Name": "Project with no releases"
+   }
+]

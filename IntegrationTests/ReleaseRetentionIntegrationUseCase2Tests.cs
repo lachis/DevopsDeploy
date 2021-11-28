@@ -15,7 +15,7 @@ using Xunit;
 
 namespace IntegrationTests
 {
-    public class ReleaseRetentionIntegrationTests : IAsyncLifetime
+    public class ReleaseRetentionIntegrationUseCase2Tests : IAsyncLifetime
     {
         private IContainer _container;
         private IReadOnlyList<ReleaseDTO> _objectUnderTest;
@@ -39,7 +39,7 @@ namespace IntegrationTests
 
             foreach (var group in dictionary)
             {
-                Assert.True(group.Value.Count <= 4);
+                Assert.True(group.Value.Count <= 1);
             }
         }
          
@@ -93,7 +93,7 @@ namespace IntegrationTests
             await using ILifetimeScope lifetimeScope = _container.BeginLifetimeScope();
 
             var releaseRetention = lifetimeScope.Resolve<ReleaseRetention>();
-            _objectUnderTest = await releaseRetention.Retain(4);
+            _objectUnderTest = await releaseRetention.Retain(1);
         }
 
         public async Task DisposeAsync()

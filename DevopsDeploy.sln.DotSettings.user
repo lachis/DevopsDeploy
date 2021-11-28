@@ -3,8 +3,6 @@
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=d341efa6_002Db4d9_002D45a8_002Db661_002D19215297ffe8/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="ReadProjects_Success" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;Or&gt;&#xD;
     &lt;Project Location="C:\Users\lachl\RiderProjects\DevopsDeploy\DevopsDeploy.Tests" Presentation="&amp;lt;DevopsDeploy.Tests&amp;gt;" /&gt;&#xD;
-    &lt;TestAncestor&gt;&#xD;
-      &lt;TestId&gt;xUnit::BED7DC98-A776-4969-B45F-A99E2503CDEA::net5.0::IntegrationTests.ReleaseRetentionIntegrationTests&lt;/TestId&gt;&#xD;
-    &lt;/TestAncestor&gt;&#xD;
+    &lt;Project Location="C:\Users\lachl\RiderProjects\DevopsDeploy\IntegrationTests" Presentation="&amp;lt;IntegrationTests&amp;gt;" /&gt;&#xD;
   &lt;/Or&gt;&#xD;
 &lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>

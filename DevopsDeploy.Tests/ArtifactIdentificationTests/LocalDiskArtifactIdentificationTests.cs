@@ -15,8 +15,9 @@ namespace DevopsDeploy.Tests.ArtifactIdentificationTests
         public async Task InitializeAsync()
         {
             LocalDiskArtifactRepository repository = new(new TestFileConfiguration());
+            StandardArtifactGrouping grouping = new();
             LocalDiskArtifactIdentification artifactIdentification =
-                new(repository, "TestReleases-3.json", "TestDeployments-3.json");
+                new(repository, grouping, "TestReleases-3.json", "TestDeployments-3.json");
 
             _objectUnderTest = await artifactIdentification.Identify();
         }

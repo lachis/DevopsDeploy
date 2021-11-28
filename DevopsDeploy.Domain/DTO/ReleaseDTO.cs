@@ -7,7 +7,6 @@ namespace DevopsDeploy.Domain.DTO
         public string Key => $"{ProjectId}:{EnvironmentId}";
         public string ProjectId => Release.ProjectId;
         public string EnvironmentId => Deployment.EnvironmentId;
-        
         public string ReleaseId => Release.Id;
         public Release Release { get; }
         public Deployment Deployment { get; }

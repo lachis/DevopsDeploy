@@ -1,8 +1,6 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using System.Threading.Tasks;
 using DevopsDeploy.Abstractions.Interfaces;
-using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Core.DataAccess
@@ -12,12 +10,14 @@ namespace DevopsDeploy.Core.DataAccess
         private readonly IRepository _repository;
         private readonly string _releasesPath;
         private readonly string _deploymentsPath;
+        private readonly IArtifactGrouping _standardArtifactGrouping;
 
-        public LocalDiskArtifactIdentification(IRepository repository, string releasesPath, string deploymentsPath)
+        public LocalDiskArtifactIdentification(IRepository repository, IArtifactGrouping artifactGrouping, string releasesPath, string deploymentsPath)
         {
             _repository = repository;
             _releasesPath = releasesPath;
             _deploymentsPath = deploymentsPath;
+            _standardArtifactGrouping = artifactGrouping;
         }
 
         public async Task<IEnumerable<ReleaseIdentification>> Identify()
@@ -25,12 +25,7 @@ namespace DevopsDeploy.Core.DataAccess
             var releases = await _repository.Get<Release>(_releasesPath);
             var deployments = await _repository.Get<Deployment>(_deploymentsPath);
 
-            return from r in releases
-                join d in deployments on r.Id equals d.ReleaseId
-                orderby d.DeployedAt descending 
-                group (r, d) by (r.ProjectId, d.EnvironmentId)
-                into g
-                select new ReleaseIdentification(g.Key, g.Select(x=> new ReleaseDTO(x.r, x.d)));
+            return _standardArtifactGrouping.GroupArtifacts(releases, deployments);
         }
     }
 }

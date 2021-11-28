@@ -37,6 +37,7 @@ namespace DevopsDeploy.Tests.BusinessLogicValidationTests
         public async Task InitializeAsync()
         {
             LocalDiskArtifactIdentification strategy = new(new LocalDiskArtifactRepository(new TestFileConfiguration()),
+                new StandardArtifactGrouping(),
                 "TestReleases-2.json", "TestDeployments-2.json");
             var identifiedRleases = await strategy.Identify();
             

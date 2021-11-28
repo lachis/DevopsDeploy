@@ -81,8 +81,11 @@ namespace IntegrationTests
             containerBuilder.RegisterType<StandardReleaseRetentionPolicy>()
                 .As<IReleaseRetentionPolicy>();
             
+            containerBuilder.RegisterType<StandardArtifactGrouping>()
+                .As<IArtifactGrouping>();
+            
             containerBuilder.Register(ctx => 
-                    new LocalDiskArtifactIdentification(ctx.Resolve<IRepository>(), "TestReleases-3.json", "TestDeployments-3.json"))
+                    new LocalDiskArtifactIdentification(ctx.Resolve<IRepository>(), ctx.Resolve<IArtifactGrouping>(), "TestReleases-3.json", "TestDeployments-3.json"))
                 .As<IArtifactIdentification>();
 
             containerBuilder.RegisterDecorator<RetentionLoggingDecorator, IReleaseRetentionPolicy>();

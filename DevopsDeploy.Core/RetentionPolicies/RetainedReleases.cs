@@ -2,7 +2,6 @@
 using System.Linq;
 using DevopsDeploy.Abstractions.Interfaces;
 using DevopsDeploy.Domain.DTO;
-using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Core.RetentionPolicies
 {

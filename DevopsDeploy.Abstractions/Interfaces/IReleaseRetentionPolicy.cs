@@ -1,6 +1,5 @@
 ﻿using System.Collections.Generic;
 using DevopsDeploy.Domain.DTO;
-using DevopsDeploy.Domain.Models;
 
 namespace DevopsDeploy.Abstractions.Interfaces
 {

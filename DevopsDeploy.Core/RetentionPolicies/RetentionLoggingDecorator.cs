@@ -1,5 +1,4 @@
 ﻿using System.Collections.Generic;
-using System.Linq;
 using DevopsDeploy.Abstractions.Interfaces;
 using DevopsDeploy.Domain.DTO;
 using Microsoft.Extensions.Logging;

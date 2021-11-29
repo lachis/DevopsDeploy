@@ -4,11 +4,11 @@ using DevopsDeploy.Abstractions.Interfaces;
 using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Domain.Models;
 
-namespace DevopsDeploy.Core.DataAccess
+namespace DevopsDeploy.Core.RetentionPolicies
 {
-    public class StandardArtifactGrouping : IArtifactGrouping
+    public class StandardReleaseIdentificationPolicy : IReleaseIdentificationPolicy
     {
-        public IEnumerable<ReleaseIdentification> GroupArtifacts(IEnumerable<Release> releases, IEnumerable<Deployment> deployments)
+        public IEnumerable<ReleaseIdentification> ApplyPolicy(IEnumerable<Release> releases, IEnumerable<Deployment> deployments)
         {
             return from r in releases
                 join d in deployments on r.Id equals d.ReleaseId

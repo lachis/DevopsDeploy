@@ -2,7 +2,8 @@
 using System.Linq;
 using System.Threading.Tasks;
 using DevopsDeploy.Core.DataAccess;
-using DevopsDeploy.Domain.Models;
+using DevopsDeploy.Core.RetentionPolicies;
+using DevopsDeploy.Domain.DTO;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
 
@@ -15,7 +16,7 @@ namespace DevopsDeploy.Tests.ArtifactIdentificationTests
         public async Task InitializeAsync()
         {
             LocalDiskArtifactRepository repository = new(new TestFileConfiguration());
-            StandardArtifactGrouping grouping = new();
+            StandardReleaseIdentificationPolicy grouping = new();
             LocalDiskArtifactIdentification artifactIdentification =
                 new(repository, grouping, "TestReleases-3.json", "TestDeployments-3.json");
 

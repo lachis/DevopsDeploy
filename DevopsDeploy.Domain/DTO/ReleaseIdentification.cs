@@ -1,7 +1,6 @@
 ﻿using System.Collections.Generic;
-using DevopsDeploy.Domain.DTO;
 
-namespace DevopsDeploy.Domain.Models
+namespace DevopsDeploy.Domain.DTO
 {
     public class ReleaseIdentification
     {

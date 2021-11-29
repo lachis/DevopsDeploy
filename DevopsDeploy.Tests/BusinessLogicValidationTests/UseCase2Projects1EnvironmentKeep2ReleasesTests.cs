@@ -4,7 +4,6 @@ using System.Threading.Tasks;
 using DevopsDeploy.Core.DataAccess;
 using DevopsDeploy.Core.RetentionPolicies;
 using DevopsDeploy.Domain.DTO;
-using DevopsDeploy.Domain.Models;
 using DevopsDeploy.Tests.Configuration;
 using Xunit;
 
@@ -37,7 +36,7 @@ namespace DevopsDeploy.Tests.BusinessLogicValidationTests
         public async Task InitializeAsync()
         {
             LocalDiskArtifactIdentification strategy = new(new LocalDiskArtifactRepository(new TestFileConfiguration()),
-                new StandardArtifactGrouping(),
+                new StandardReleaseIdentificationPolicy(),
                 "TestReleases-2.json", "TestDeployments-2.json");
             var identifiedRleases = await strategy.Identify();
             

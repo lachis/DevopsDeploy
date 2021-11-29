@@ -30,11 +30,11 @@ namespace DevopsDeploy
             containerBuilder.RegisterType<StandardReleaseRetentionPolicy>()
                 .As<IReleaseRetentionPolicy>();
             
-            containerBuilder.RegisterType<StandardArtifactGrouping>()
-                .As<IArtifactGrouping>();
+            containerBuilder.RegisterType<StandardReleaseIdentificationPolicy>()
+                .As<IReleaseIdentificationPolicy>();
             
             containerBuilder.Register(ctx => 
-                    new LocalDiskArtifactIdentification(ctx.Resolve<IRepository>(), ctx.Resolve<IArtifactGrouping>(), "Releases.json", "Deployments.json"))
+                    new LocalDiskArtifactIdentification(ctx.Resolve<IRepository>(), ctx.Resolve<IReleaseIdentificationPolicy>(), "Releases.json", "Deployments.json"))
                 .As<IArtifactIdentification>();
 
             containerBuilder.RegisterDecorator<RetentionLoggingDecorator, IReleaseRetentionPolicy>();
